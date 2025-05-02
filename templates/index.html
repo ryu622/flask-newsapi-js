@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ニュース検索</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>ニュース検索</h1>
+    <div class="container">
+    <div class="research">
+    <form action="/" method="GET">
+        <!--検索バー-->
+        <p>
+            検索<br>
+            <input type="text" name="keyword" placeholder="キーワード">
+        </p>
+        <p>
+            <input type="submit"  class="button" value="送信">
+        </p>
+    </form>
+    </div>
+    
+    <!--結果表示欄 (for文で列挙)-->
+    結果<br> 
+    {% for article in articles %}
+    <div class="result">
+        <h2>
+            <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
+        </h2>
+        {% if article.image %}
+        <div class="image">
+        <img src="{{ article.image }}" alt="News image" style="max-width:300px;">
+        </div>
+        <p>
+            要約<br>
+            {{article.description}}
+        </p>
+
+        {% endif %}
+    </div>
+    {% endfor %}
+    </div>
+
+    {% if keyword %}
+    <div class="trans">
+        {% if page > 1 %}
+        <a href="/?keyword={{ keyword }}&page={{ page - 1 }}">前へ</a>
+        {% endif %}
+        <a href="/?keyword={{ keyword }}&page={{ page + 1 }}">次へ</a>
+    </div>
+    {% endif %}
+
+</body>
+
+
+
+
+
+
+</html>
