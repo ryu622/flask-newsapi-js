@@ -3,6 +3,8 @@ from flask import Flask,render_template,request ,jsonify
 import os
 from dotenv import load_dotenv
 
+#以前はflaskだけだったがフロントでJSを使うようにした
+
 # 環境変数に設定したAPIKeyを使うために.envファイルを読み込む
 load_dotenv()
 
@@ -16,6 +18,7 @@ app.config['MY_APIKEY'] =os.getenv('MY_APIKEY')
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 #API
 @app.route('/api/news')
