@@ -2,7 +2,7 @@
 flask-newsapi-js
 
 #概要・背景 
-apiを作ってフロントエンドとバックエンドに分けた開発の練習としてニュース検索アプリを作成した。バックエンドはFlaskでapiを作成し、フロントエンドはJavaScriptで作成したapiを叩くことでページの動的更新を実現した。まだ、UIは製作途中であり随時改善していく予定である。このアプリ作成の過程でJavaScriptによるfetchの方法やFlaskでapiを作ることの基礎を学べた。なお、APIキーはセキュリティのため.envフォルダに入れ.gitignoreとした。
+apiを作ってフロントエンドとバックエンドに分けた開発の練習としてニュース検索アプリを作成した。バックエンドはFlaskでapiを作成し、フロントエンドはJavaScriptで作成したapiを叩くことでページの動的更新を実現した。まだ、UIは製作途中であり随時改善していく予定である。このアプリ作成の過程でJavaScriptによるfetchの方法やFlaskでapiを作ることの基礎を学べた。なお、APIキーはセキュリティのため.envフォルダに入れ.gitignoreとした。次はページ更新機能を実装する予定である。
 
 #インストール方法 git clone https://github.com/ryu622/flask-newsapi-js.git cd　flask-newsapi-js  pip install -r requirements.txt
 
